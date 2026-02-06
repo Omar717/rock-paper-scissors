@@ -39,21 +39,34 @@ function playGame() {
             console.log("You win! scissors beats paper");
             return humanScore = ++humanScore;
         } else {
-            console.log("It's a draw!")
+            console.log("It's a draw!");
         }
     }
-    playRound(getHumanChoice(), getComputerChoice())
-    playRound(getHumanChoice(), getComputerChoice())
-    playRound(getHumanChoice(), getComputerChoice())
-    playRound(getHumanChoice(), getComputerChoice())
-    playRound(getHumanChoice(), getComputerChoice())
+
+    const rockBtn = document.createElement("button");
+    const paperBtn = document.createElement("button");
+    const scissorsBtn = document.createElement("button");
+
+    const container = document.querySelector(".container");
+
+    rockBtn.textContent = "Rock";
+    paperBtn.textContent = "Paper";
+    scissorsBtn.textContent = "Scissors";
+
+    container.appendChild(rockBtn);
+    container.appendChild(paperBtn);
+    container.appendChild(scissorsBtn);
+
+    rockBtn.addEventListener("click", playRound("rock", getComputerChoice));
+    paperBtn.addEventListener("click", playRound("paper", getComputerChoice));
+    scissorsBtn.addEventListener("click", playRound("scissors", getComputerChoice));
 
     if (humanScore > computerScore) {
-        console.log("Congratulations! You win")
+        console.log("Congratulations! You win");
     } else if (computerScore > humanScore) {
-        console.log("You lost. Too bad")
+        console.log("You lost. Too bad");
     } else {
-        console.log("It's a draw")
+        console.log("It's a draw");
     }
 }
 
