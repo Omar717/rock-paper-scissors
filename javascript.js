@@ -17,7 +17,18 @@ function playGame() {
     const computerCount = document.querySelector(".computerScore");
     const winner = document.querySelector(".winner");
 
+    const rockBtn = document.querySelector(".rockBtn");
+    const paperBtn = document.querySelector(".paperBtn");
+    const scissorsBtn = document.querySelector(".scissorsBtn");
+    const restartBtn = document.querySelector(".restartBtn");
+
+    rockBtn.addEventListener("click", () => playRound("rock", getComputerChoice()));
+    paperBtn.addEventListener("click", () => playRound("paper", getComputerChoice()));
+    scissorsBtn.addEventListener("click", () => playRound("scissors", getComputerChoice()));
+    restartBtn.addEventListener("click", () => location.reload());
+
     function playRound(humanChoice, computerChoice) {
+
         humanChoice = humanChoice.toLowerCase();
         counter = humanScore + computerScore;
 
@@ -57,21 +68,12 @@ function playGame() {
             computerCount.textContent = "Computer's Score: " + String(computerScore);
         }
 
-        if (humanScore == 5) {
+        if (humanScore == 5 && (humanScore > computerScore)) {
             return winner.textContent = "Congratulations! You win";
-        } else if (computerScore == 5) {
+        } else if (computerScore == 5 && (computerScore > humanScore)) {
             return winner.textContent = "You lost. Too bad";
         }
-
     }
-
-    const rockBtn = document.querySelector(".rockBtn");
-    const paperBtn = document.querySelector(".paperBtn");
-    const scissorsBtn = document.querySelector(".scissorsBtn");
-
-    rockBtn.addEventListener("click", () => playRound("rock", getComputerChoice()));
-    paperBtn.addEventListener("click", () => playRound("paper", getComputerChoice()));
-    scissorsBtn.addEventListener("click", () => playRound("scissors", getComputerChoice()));
 }
 
 playGame()
