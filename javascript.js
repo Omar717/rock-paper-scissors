@@ -13,6 +13,8 @@ function playGame() {
     let computerScore = 0;
 
     const result = document.querySelector(".result");
+    const humanResult = document.querySelector(".humanResult");
+    const computerResult = document.querySelector(".computerResult");
     const humanCount = document.querySelector(".humanScore");
     const computerCount = document.querySelector(".computerScore");
     const winner = document.querySelector(".winner");
@@ -33,37 +35,51 @@ function playGame() {
         counter = humanScore + computerScore;
 
         if (humanChoice === "rock" && computerChoice === "paper") {
-            result.textContent = "paper beats rock";
+            humanResult.textContent = "You chose: " + humanChoice;
+            computerResult.textContent = "Computer chose: " + computerChoice;
+            result.textContent = "paper beats rock"
             computerScore = ++computerScore; 
             humanCount.textContent = "Your Score: " + String(humanScore);
             computerCount.textContent = "Computer's Score: " + String(computerScore);  
         } else if (humanChoice === "rock" && computerChoice === "scissors") {
-            result.textContent = "rock beats scissors";
+            humanResult.textContent = "You chose: " + humanChoice;
+            computerResult.textContent = "Computer chose: " + computerChoice;
+            result.textContent = "rock beats scissors"
             humanScore = ++humanScore;
             humanCount.textContent = "Your Score: " + String(humanScore);
             computerCount.textContent = "Computer's Score: " + String(computerScore);
         } else if (humanChoice === "paper" && computerChoice === "rock") {
-            result.textContent = "paper beats rock";
+            humanResult.textContent = "You chose: " + humanChoice;
+            computerResult.textContent = "Computer chose: " + computerChoice;
+            result.textContent = "paper beats rock"
             humanScore = ++humanScore;
             humanCount.textContent = "Your Score: " + String(humanScore);
             computerCount.textContent = "Computer's Score: " + String(computerScore);
         } else if (humanChoice === "paper" && computerChoice === "scissors") {
-            result.textContent = "scissors beats paper";
+            humanResult.textContent = "You chose: " + humanChoice;
+            computerResult.textContent = "Computer chose: " + computerChoice;
+            result.textContent = "scissors beats paper"
             computerScore = ++computerScore; 
             humanCount.textContent = "Your Score: " + String(humanScore);
             computerCount.textContent = "Computer's Score: " + String(computerScore);
         } else if (humanChoice === "scissors" && computerChoice === "rock") {
-            result.textContent = "rock beats scissors";
+            humanResult.textContent = "You chose: " + humanChoice;
+            computerResult.textContent = "Computer chose: " + computerChoice;
+            result.textContent = "rock beats scissors"
             computerScore = ++computerScore; 
             humanCount.textContent = "Your Score: " + String(humanScore);
             computerCount.textContent = "Computer's Score: " + String(computerScore);
         } else if (humanChoice === "scissors" && computerChoice === "paper") {
-            result.textContent = "scissors beats paper";
+            humanResult.textContent = "You chose: " + humanChoice;
+            computerResult.textContent = "Computer chose: " + computerChoice;
+            result.textContent = "scissors beats paper"
             humanScore = ++humanScore;
             humanCount.textContent = "Your Score: " + String(humanScore);
             computerCount.textContent = "Computer's Score: " + String(computerScore);
         } else {
-            result.textContent = "It's a draw!";
+            humanResult.textContent = "You chose: " + humanChoice;
+            computerResult.textContent = "Computer chose: " + computerChoice;
+            result.textContent = "It's a draw!"
             humanCount.textContent = "Your Score: " + String(humanScore);
             computerCount.textContent = "Computer's Score: " + String(computerScore);
         }
